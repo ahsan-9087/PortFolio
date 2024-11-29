@@ -294,33 +294,34 @@ window.addEventListener('scroll', function() {
 
 
 
+  const form = document.getElementById('contact-form');
+  const successMessage = document.getElementById('success-message');
 
-    const form = document.getElementById('contact-form');
-    const successMessage = document.getElementById('success-message');
-  
-    form.addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent form from submitting and redirecting
-  
-      // Send form data to FormSubmit using fetch API
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-      })
-      .then(response => {
-        if (response.ok) {
-          // Show success message
-          successMessage.style.display = 'block';
-          alert('Message sent successfully!');
-          form.reset(); // Reset form fields
-        } else {
-          alert('Failed to send message!');
-        }
-      })
-      .catch(error => {
-        console.error(error);
-        alert('An error occurred!');
-      });
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form from submitting immediately
+
+    // Send form data to FormSubmit using fetch API
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+    })
+    .then(response => {
+      if (response.ok) {
+        successMessage.style.display = 'block';
+        alert('Message sent successfully! Redirecting...');
+        
+        // Redirect to the desired page after form submission
+        window.location.href = 'https://ahsan-9087.github.io/PortFolio/thank-you.html'; // Replace with your redirect URL
+      } else {
+        alert('Failed to send message!');
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      alert('An error occurred!');
     });
+  });
+
   
 
   
