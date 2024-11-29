@@ -296,27 +296,27 @@ window.addEventListener('scroll', function() {
 
 
 
-
     const form = document.querySelector('form');
-const successMessage = document.getElementById('success-message');
-
-form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default submission to show success message
-    fetch(form.action, {
+    const successMessage = document.getElementById('success-message');
+  
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent default form submission
+      fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
-    })
-        .then(response => {
-            if (response.ok) {
-                successMessage.style.display = 'block';
-                form.reset(); // Clear the form after submission
-            } else {
-                alert('Failed to send message!');
-            }
-        })
-        .catch(error => {
-            console.error(error);
-            alert('An error occurred!');
-        });
-});
+      })
+      .then(response => {
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          form.reset(); // Reset the form after success
+        } else {
+          alert('Failed to send message!');
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert('An error occurred!');
+      });
+    });
+  
 
