@@ -295,28 +295,33 @@ window.addEventListener('scroll', function() {
 
 
 
-
-  const form = document.querySelector('form');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent immediate redirect
-    
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-    })
-    .then(response => {
-      if (response.ok) {
-        window.location.href = 'https://ahsan-9087.github.io/PortFolio/'; // Redirect after success
-      } else {
-        alert('Failed to send message!');
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      alert('An error occurred!');
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+  
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from submitting and redirecting
+  
+      // Send form data to FormSubmit using fetch API
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+      })
+      .then(response => {
+        if (response.ok) {
+          // Show success message
+          successMessage.style.display = 'block';
+          alert('Message sent successfully!');
+          form.reset(); // Reset form fields
+        } else {
+          alert('Failed to send message!');
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert('An error occurred!');
+      });
     });
-  });
-
+  
 
   
 
