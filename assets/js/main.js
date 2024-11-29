@@ -293,34 +293,32 @@ window.addEventListener('scroll', function() {
 
 
 
-
-  const form = document.getElementById('contact-form');
-  const successMessage = document.getElementById('success-message');
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent form from submitting immediately
-
-    // Send form data to FormSubmit using fetch API
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-    })
-    .then(response => {
-      if (response.ok) {
-        successMessage.style.display = 'block';
-        alert('Message sent successfully! Redirecting...');
-        
-        // Redirect to the desired page after form submission
-        window.location.href = 'https://ahsan-9087.github.io/PortFolio/'; // Replace with your redirect URL
-      } else {
-        alert('Failed to send message!');
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      alert('An error occurred!');
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+  
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from submitting immediately
+  
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+      })
+      .then(response => {
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          alert('Message sent successfully! Redirecting...');
+          
+          // Redirect after successful form submission
+          window.location.href = 'https://ahsan-9087.github.io/PortFolio/'; // Replace with your redirect URL
+        } else {
+          alert('Failed to send message!');
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert('An error occurred!');
+      });
     });
-  });
 
   
 
