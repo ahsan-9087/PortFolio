@@ -264,30 +264,59 @@ window.addEventListener('scroll', function() {
 
 
 
-    // Initialize EmailJS with your Public Key
-    emailjs.init('2OLEth93CcIQQOkK1'); // Replace with your public key
+    // // Initialize EmailJS with your Public Key
+    // emailjs.init('2OLEth93CcIQQOkK1'); // Replace with your public key
 
-    // Function to send email
-    function sendEmail(event) {
-      event.preventDefault(); // Prevent default form submission
+    // // Function to send email
+    // function sendEmail(event) {
+    //   event.preventDefault(); // Prevent default form submission
 
-      // Define the form parameters
-      const params = {
-        name: document.getElementById('name-field').value,
-        email: document.getElementById('email-field').value,
-        subject: document.getElementById('subject-field').value,
-        message: document.getElementById('message-field').value,
-      };
+    //   // Define the form parameters
+    //   const params = {
+    //     name: document.getElementById('name-field').value,
+    //     email: document.getElementById('email-field').value,
+    //     subject: document.getElementById('subject-field').value,
+    //     message: document.getElementById('message-field').value,
+    //   };
 
-      // Send email using EmailJS
-      emailjs.send('service_pg4l2pj', 'template_qrundbs', params) // Use your IDs here
+    //   // Send email using EmailJS
+    //   emailjs.send('service_pg4l2pj', 'template_qrundbs', params) // Use your IDs here
+    //     .then(response => {
+    //       alert('Email sent successfully!');
+    //       console.log('SUCCESS!', response.status, response.text);
+    //     })
+    //     .catch(error => {
+    //       alert('Failed to send email. Please try again.');
+    //       console.error('FAILED...', error);
+    //     });
+    // }
+
+
+
+
+
+
+
+    const form = document.querySelector('form');
+const successMessage = document.getElementById('success-message');
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default submission to show success message
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+    })
         .then(response => {
-          alert('Email sent successfully!');
-          console.log('SUCCESS!', response.status, response.text);
+            if (response.ok) {
+                successMessage.style.display = 'block';
+                form.reset(); // Clear the form after submission
+            } else {
+                alert('Failed to send message!');
+            }
         })
         .catch(error => {
-          alert('Failed to send email. Please try again.');
-          console.error('FAILED...', error);
+            console.error(error);
+            alert('An error occurred!');
         });
-    }
+});
 
