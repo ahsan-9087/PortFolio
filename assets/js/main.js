@@ -264,7 +264,30 @@ window.addEventListener('scroll', function() {
 
 
 
+    // Initialize EmailJS with your Public Key
+    emailjs.init('2OLEth93CcIQQOkK1'); // Replace with your public key
 
+    // Function to send email
+    function sendEmail(event) {
+      event.preventDefault(); // Prevent default form submission
 
+      // Define the form parameters
+      const params = {
+        name: document.getElementById('name-field').value,
+        email: document.getElementById('email-field').value,
+        subject: document.getElementById('subject-field').value,
+        message: document.getElementById('message-field').value,
+      };
 
+      // Send email using EmailJS
+      emailjs.send('service_pg4l2pj', 'template_qrundbs', params) // Use your IDs here
+        .then(response => {
+          alert('Email sent successfully!');
+          console.log('SUCCESS!', response.status, response.text);
+        })
+        .catch(error => {
+          alert('Failed to send email. Please try again.');
+          console.error('FAILED...', error);
+        });
+    }
 

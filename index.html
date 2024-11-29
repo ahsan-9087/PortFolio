@@ -459,44 +459,41 @@
           </div>
 
           <div class="col-lg-7">
-            <form  method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form onsubmit="sendEmail(event)" method="post" class="php-email-form">
               <div class="row gy-4">
-
+          
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <label for="name-field">Your Name</label>
+                  <input type="text" id="name-field" class="form-control" required>
                 </div>
-
+          
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <label for="email-field">Your Email</label>
+                  <input type="email" id="email-field" class="form-control" required>
                 </div>
-
+          
                 <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <label for="subject-field">Subject</label>
+                  <input type="text" id="subject-field" class="form-control" required>
                 </div>
-
+          
                 <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <label for="message-field">Message</label>
+                  <textarea id="message-field" rows="5" class="form-control" required></textarea>
                 </div>
-
-                
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
+          
+                <div class="col-md-12">
+                  <div id="success-message" style="display: none; color: green;">Message sent successfully!</div>
+                  <button type="submit" class="btn btn-primary">Send Message</button>
                 </div>
-
               </div>
             </form>
-          </div><!-- End Contact Form -->
+          </div>
+          
+          
 
-        </div>
 
-      </div>
-
-    </section><!-- /Contact Section -->
+    
 
   </main>
 
@@ -547,6 +544,8 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
