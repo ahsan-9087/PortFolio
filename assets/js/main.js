@@ -306,7 +306,7 @@ window.addEventListener('scroll', function() {
     })
     .then(response => {
       if (response.ok) {
-        window.location.href = 'https://ahsan-9087.github.io/PortFolio/thank-you.html'; // Redirect after success
+        window.location.href = 'https://ahsan-9087.github.io/PortFolio/'; // Redirect after success
       } else {
         alert('Failed to send message!');
       }
