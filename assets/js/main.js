@@ -311,7 +311,7 @@ window.addEventListener('scroll', function() {
         alert('Message sent successfully! Redirecting...');
         
         // Redirect to the desired page after form submission
-        window.location.href = 'https://ahsan-9087.github.io/PortFolio/thank-you.html'; // Replace with your redirect URL
+        window.location.href = 'https://ahsan-9087.github.io/PortFolio/'; // Replace with your redirect URL
       } else {
         alert('Failed to send message!');
       }
