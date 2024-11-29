@@ -296,27 +296,27 @@ window.addEventListener('scroll', function() {
 
 
 
-    const form = document.querySelector('form');
-    const successMessage = document.getElementById('success-message');
-  
-    form.addEventListener('submit', function(e) {
-      e.preventDefault(); // Prevent default form submission
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-      })
-      .then(response => {
-        if (response.ok) {
-          successMessage.style.display = 'block';
-          form.reset(); // Reset the form after success
-        } else {
-          alert('Failed to send message!');
-        }
-      })
-      .catch(error => {
-        console.error(error);
-        alert('An error occurred!');
-      });
+  const form = document.querySelector('form');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent immediate redirect
+    
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+    })
+    .then(response => {
+      if (response.ok) {
+        window.location.href = 'https://ahsan-9087.github.io/PortFolio/thank-you.html'; // Redirect after success
+      } else {
+        alert('Failed to send message!');
+      }
+    })
+    .catch(error => {
+      console.error(error);
+      alert('An error occurred!');
     });
+  });
+
+
   
 
