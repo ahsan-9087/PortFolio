@@ -320,6 +320,30 @@ window.addEventListener('scroll', function() {
       });
     });
 
+
+
+
+
+
+
+
+
+
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      // Prevent the default form submission
+      event.preventDefault();
+
+      // Get the success message element
+      var successMessage = document.getElementById('successMessage');
+
+      // Simulate successful form submission (use this only if you're testing, remove in production)
+      successMessage.classList.remove('d-none'); // Show success message
+      this.reset(); // Reset the form
+
+      // You can also handle sending the form here via AJAX (fetch)
+      // For now, this simulates a successful submission without actually sending the form.
+  });
+
   
 
   
