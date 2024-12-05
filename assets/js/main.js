@@ -324,24 +324,26 @@ window.addEventListener('scroll', function() {
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 
 
 
+  
     document.getElementById('contactForm').addEventListener('submit', function (event) {
-      // Prevent the default form submission
-      event.preventDefault();
+      event.preventDefault();  // Prevent the form from submitting normally
 
-      // Get the success message element
-      var successMessage = document.getElementById('successMessage');
+      // Show SweetAlert2 success message
+      Swal.fire({
+          icon: 'success',
+          title: 'Your message has been sent successfully!',
+          text: 'Thank you for reaching out. We will get back to you soon.',
+          confirmButtonText: 'OK'
+      });
 
-      // Simulate successful form submission (use this only if you're testing, remove in production)
-      successMessage.classList.remove('d-none'); // Show success message
-      this.reset(); // Reset the form
-
-      // You can also handle sending the form here via AJAX (fetch)
-      // For now, this simulates a successful submission without actually sending the form.
+      // After showing the alert, submit the form using FormSubmit
+      this.submit();  // This submits the form after showing the success message
   });
 
   
