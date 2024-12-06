@@ -1386,10 +1386,4 @@ iframe {
   transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #0056b3;
-}
 
-#success-message {
-  margin-top: 15px;
-}
