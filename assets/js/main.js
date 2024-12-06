@@ -324,27 +324,7 @@ window.addEventListener('scroll', function() {
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-
-
-
   
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-      event.preventDefault();  // Prevent the form from submitting normally
-
-      // Show SweetAlert2 success message
-      Swal.fire({
-          icon: 'success',
-          title: 'Your message has been sent successfully!',
-          text: 'Thank you for reaching out. We will get back to you soon.',
-          confirmButtonText: 'OK'
-      });
-
-      // After showing the alert, submit the form using FormSubmit
-      this.submit();  // This submits the form after showing the success message
-  });
 
   
 
