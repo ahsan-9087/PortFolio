@@ -324,7 +324,22 @@ window.addEventListener('scroll', function() {
 
 
 
-  
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Stop default form submission
+
+      // Show SweetAlert confirmation
+      Swal.fire({
+          title: 'Thank you!',
+          text: 'Your message has been sent successfully.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+      }).then((result) => {
+          if (result.isConfirmed) {
+              // Submit the form after confirmation
+              e.target.submit();
+          }
+      });
+  });
 
   
 
