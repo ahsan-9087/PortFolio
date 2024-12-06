@@ -459,37 +459,24 @@
           </div>
         
           <form id="contactForm" action="https://formsubmit.co/akahsan228@gmail.com" method="POST">
-            <!-- Hidden Fields -->
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://ahsan-9087.github.io/PortFolio/">
-
-            <!-- Form Fields -->
-            <div class="row gy-4">
-                <div class="col-md-6">
-                    <label for="name-field" class="form-label">Your Name</label>
-                    <input type="text" id="name-field" name="name" class="form-control" required placeholder="Enter your name">
-                </div>
-
-                <div class="col-md-6">
-                    <label for="email-field" class="form-label">Your Email</label>
-                    <input type="email" id="email-field" name="email" class="form-control" required placeholder="Enter your email">
-                </div>
-
-                <div class="col-md-12">
-                    <label for="subject-field" class="form-label">Subject</label>
-                    <input type="text" id="subject-field" name="subject" class="form-control" required placeholder="Subject of your message">
-                </div>
-
-                <div class="col-md-12">
-                    <label for="message-field" class="form-label">Message</label>
-                    <textarea id="message-field" name="message" rows="5" class="form-control" required placeholder="Write your message here"></textarea>
-                </div>
-
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </div>
-            </div>
+        
+            <label for="name-field">Your Name</label>
+            <input type="text" id="name-field" name="name" required placeholder="Enter your name">
+        
+            <label for="email-field">Your Email</label>
+            <input type="email" id="email-field" name="email" required placeholder="Enter your email">
+        
+            <label for="subject-field">Subject</label>
+            <input type="text" id="subject-field" name="subject" required placeholder="Subject of your message">
+        
+            <label for="message-field">Message</label>
+            <textarea id="message-field" name="message" rows="5" required placeholder="Write your message here"></textarea>
+        
+            <button type="submit">Send Message</button>
         </form>
+        
     </div>
 
 </form>
