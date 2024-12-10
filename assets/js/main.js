@@ -293,16 +293,6 @@ window.addEventListener('scroll', function() {
 
 
 
-<script>
-  function showSuccessAlert(event) {
-    // Show the success alert
-    alert("Your message has been sent successfully!");
-
-    // Allow form submission to proceed
-    return true; // or omit this line since the form will naturally submit
-  }
-</script>
-
 
   
   
